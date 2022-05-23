@@ -49,7 +49,8 @@ public class ShopTest {
     public void canHaveDifferentTypesInStock(){
         shop.addItemToStock(guitar);
         shop.addItemToStock(drumSticks);
-        assertEquals(2, shop.getNumberOfItemsInStock());
+        shop.addItemToStock(guitar);
+        assertEquals(3, shop.getNumberOfItemsInStock());
     }
 
     @Test
@@ -59,5 +60,10 @@ public class ShopTest {
         assertEquals(60, shop.calculatePotentialProfit(), 0.0);
     }
 
+    @Test
+    public void canGetClass(){
+        shop.addItemToStock(guitar);
+        assertEquals("Guitar", shop.getStock().get(0).getClass());
+    }
 
 }

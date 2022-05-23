@@ -1,14 +1,18 @@
 import behaviours.ISell;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Shop {
 
     private ArrayList<ISell> stock;
+    private HashMap<ISell, Integer> stockTypeCount;
 
     public Shop() {
         this.stock = new ArrayList<>();
+        this.stockTypeCount = new HashMap<>();
     }
+
 
     public ArrayList getStock(){
         return this.stock;
